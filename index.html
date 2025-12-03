@@ -18,13 +18,13 @@
 
         th {
             text-align: left;
-            font-size: 28px;
-            padding: 15px;
+            font-size: 15px;
+            padding: 7px;
         }
 
         td {
-            padding: 12px;
-            font-size: 20px;
+            padding: 10px;
+            font-size: 10px;
         }
 
         .grey {
@@ -38,7 +38,7 @@
     </style>
    </head>
 
-<body style="background-color:slateblue;margin-left:50px;">
+<body style="background-color:paleblue;margin-left:50px;">
   <table>
     <tr>
         <th>Table of contents</th>
@@ -85,6 +85,133 @@ mathematicians and physicists to develop models that could describe such large-s
 <h4><b>2.2 Geometry and the Metric</b></h4>
 The mathematics used to describe the universe is based on general relativity, Einstein’s theory that gravity results from the curvature of spacetime. To model the universe, 
 cosmologists assume homogeneity and isotropy at large scales, a principle known as the cosmological principle (Peacock, 1999). 
+      <h5><b>Under these assumptions, the spacetime geometry is described by the FLRW metric:</b></h5>
+      <math>
+  <msup><mi>d</mi><mn>2</mn></msup><msup><mi>s</mi><mn>2</mn></msup>
+  <mo>=</mo>
+  <mo>-</mo>
+  <msup><mi>c</mi><mn>2</mn></msup>
+  <msup><mi>d t</mi><mn>2</mn></msup>
+  <mo>+</mo>
+  <msup>
+    <mrow>
+      <mi>a</mi>
+      <mo>(</mo><mi>t</mi><mo>)</mo>
+    </mrow>
+    <mn>2</mn>
+  </msup>
+  <mo>(</mo>
+  <mfrac>
+    <msup><mi>d r</mi><mn>2</mn></msup>
+    <mrow><mn>1</mn><mo>-</mo><mi>k</mi><msup><mi>r</mi><mn>2</mn></msup></mrow>
+  </mfrac>
+  <mo>+</mo>
+  <msup><mi>r</mi><mn>2</mn></msup>
+  <msup><mi>dΩ</mi><mn>2</mn></msup>
+  <mo>)</mo>
+</math>
+where a(t)is the scale factor, and kdetermines spatial curvature. Ryden (2017) explains that this metric allows cosmologists to calculate how distances evolve over 
+time as the universe expands. This metric introduces three possible global geometries—positive curvature (closed), zero curvature (flat), and negative curvature (open). 
+Modern observations from the Planck satellite show the universe is extremely close to flat, implying k≈0(Planck Collaboration, 2018).
+
+<h4><b>2.3 The Scale Factor</b></h4>
+The scale factor a(t)is a mathematical function that describes how the size of the universe changes with time. Distances between galaxies scale proportionally with a(t). 
+When a(t)=1, cosmologists define this as the present day. A smaller value indicates that distances were proportionally smaller in the past.
+Ryden (2017) emphasises that the scale factor provides a natural way to relate wavelengths of light to redshift:
+      <math>
+  <mn>1</mn><mo>+</mo><mi>z</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mrow>
+      <mi>a</mi>
+      <mo>(</mo>
+      <msub><mi>t</mi><mi>em</mi></msub>
+      <mo>)</mo>
+    </mrow>
+  </mfrac>
+</math>
+This equation indicates that the universe’s expansion stretches light, producing the redshift observed in distant galaxies.
+
+<h4><b>2.4 Hubble’s Law</b></h4>
+Hubble discovered that a galaxy’s recessional velocity(v) is proportional to its distance d:
+      <math>
+  <mi>v</mi>
+  <mo>=</mo>
+  <msub><mi>H</mi><mn>0</mn></msub>
+  <mi>d</mi>
+where  <msub><mi>H</mi><mn>0</mn></msub> is the Hubble constant. This constant represents the present-day expansion rate of the universe. According to Weinberg (2008), Hubble’s Law is a direct result of 
+the FLRW metric when galaxies are carried away by the stretching of space. The modern value of  <msub><mi>H</mi><mn>0</mn></msub> , as reported by the Planck Collaboration 
+(2018), is around 67.4 km s⁻¹ Mpc⁻¹, although other measurements yield slightly higher values, leading to the well-known “Hubble tension”.
+A common visual analogy is the expansion of dots on the surface of an inflating balloon. The dots move away from each other not because they are travelling across the 
+surface, but because the surface itself expands.
+        </math>
+      
+<h4><b>2.5 The Friedmann Equations</b></h4>
+The Friedmann equations are the mathematical heart of cosmology. Derived from Einstein’s field equations, they relate the expansion rate of the universe to its energy 
+contents. 
+      <h5><b>The first Friedmann equation is:</b></h5>
+      <math>
+  <msup>
+    <mfrac>
+      <mover><mi>a</mi><mo>.</mo></mover>
+      <mi>a</mi>
+    </mfrac>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <mfrac>
+    <mrow><mn>8</mn><mi>π</mi><mi>G</mi></mrow>
+    <mn>3</mn>
+  </mfrac>
+  <mi>ρ</mi>
+  <mo>-</mo>
+  <mfrac>
+    <mrow><mi>k</mi><msup><mi>c</mi><mn>2</mn></msup></mrow>
+    <msup><mi>a</mi><mn>2</mn></msup>
+  </mfrac>
+  <mo>+</mo>
+  <mfrac>
+    <mrow><mi>Λ</mi><msup><mi>c</mi><mn>2</mn></msup></mrow>
+    <mn>3</mn>
+  </mfrac>
+</math>
+      <p>where:</p>
+
+<ul>
+  <li><i>&rho;</i> is the total energy density,</li>
+  <li><i>k</i> is curvature,</li>
+  <li><i>&Lambda;</i> is the cosmological constant representing dark energy.</li>
+</ul>
+<h5><b>The second Friedmann equation describes the acceleration of expansion:</b></h5>
+      <math>
+  <mfrac>
+    <mover><mi>a</mi><mo>..</mo></mover>
+    <mi>a</mi>
+  </mfrac>
+  <mo>=</mo>
+  <mo>-</mo>
+  <mfrac>
+    <mrow><mn>4</mn><mi>π</mi><mi>G</mi></mrow>
+    <mn>3</mn>
+  </mfrac>
+  <mo>(</mo>
+  <mi>ρ</mi>
+  <mo>+</mo>
+  <mfrac>
+    <mrow><mn>3</mn><mi>p</mi></mrow>
+    <msup><mi>c</mi><mn>2</mn></msup>
+  </mfrac>
+  <mo>)</mo>
+  <mo>+</mo>
+  <mfrac>
+    <mrow><mi>Λ</mi><msup><mi>c</mi><mn>2</mn></msup></mrow>
+    <mn>3</mn>
+  </mfrac>
+</math>
+      Peacock (1999) explains that matter, radiation, and dark energy influence expansion differently because each has different pressure properties. Matter slows 
+      expansion, radiation opposes it more strongly, and dark energy accelerates it. Observations show the universe’s expansion is currently accelerating, meaning 
+      dark energy dominates the energy density (Planck Collaboration, 2018).
     </pre>
 </p>
    </body>
