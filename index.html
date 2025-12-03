@@ -52,10 +52,7 @@
 </table>
    </head>
 
-body {
-  background-color: powderblue;
-  margin-left: 50px;
-}
+body<background-color: powderblue; margin-left: 50px;>
 
 <h3 id="abstract">1.Abstract</h3>
   <p class="ex1" style="text-align:left;">
@@ -205,10 +202,29 @@ contents.
     <mn>3</mn>
   </mfrac>
 </math></div>
-      Peacock (1999) explains that matter, radiation, and dark energy influence expansion differently because each has different pressure properties. Matter slows 
+      (Peacock.1999) explains that matter, radiation, and dark energy influence expansion differently because each has different pressure properties. Matter slows 
       expansion, radiation opposes it more strongly, and dark energy accelerates it. Observations show the universe’s expansion is currently accelerating, meaning 
       dark energy dominates the energy density (Planck Collaboration, 2018).
     </pre>
 </p>
+  <h3 id="references">3.References</h3>
+<p id="demo"></p>
+<script>
+document.getElementById("demo").innerHTML = "Page loaded on: " + document.lastModified;
+</script>
+<p><b>Word count: </b><span id="wordCount"></span></p>
+
+<script>
+function countWords(text) {
+    return text.trim().split(/\s+/).length;
+}
+
+window.onload = function () {
+    const article = document.getElementById("main-article");
+    const text = article.innerText || article.textContent;
+    document.getElementById("wordCount").innerHTML = countWords(text);
+};
+</script>
+
    </body>
 </html>
