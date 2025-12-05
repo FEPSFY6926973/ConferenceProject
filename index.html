@@ -316,23 +316,92 @@ fate and structure of the cosmos.
 </li>
 </ul>
     
-<p id="demo"></p>
-<script>
-document.getElementById("demo").innerHTML = "Page loaded on: " + document.lastModified;
-</script>
-<p><b>Word count: </b><span id="wordCount"></span></p>
+<!-- ////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////// Last Updated (GitHub API) //////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////// -->
+
+<div id="last-updated">Loading last update time...</div>
+
+<button onclick="verifyLastUpdatedTime()" 
+        style="display:block; margin:10px auto; padding:8px 16px;">
+    Verify Last Modified Time
+</button>
 
 <script>
-function countWords(text) {
-    return text.trim().split(/\s+/).length;
+    async function getLastUpdatedTime() {
+        const username = 'nr0025';
+        const repo = 'FY0025';
+
+        const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: { 'Accept': 'application/vnd.github.v3+json' }
+            });
+
+            if (!response.ok) {
+                throw new Error(`Error fetching data: ${response.status}`);
+            }
+
+            const commits = await response.json();
+            if (commits.length > 0) {
+                const lastCommitDate = new Date(commits[0].commit.committer.date);
+                document.getElementById('last-updated').innerText =
+                    `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+            } else {
+                document.getElementById('last-updated').innerText =
+                    'No commits found.';
+            }
+
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById('last-updated').innerText =
+                'Error fetching update time.';
+        }
+    }
+
+    async function verifyLastUpdatedTime() {
+        document.getElementById('last-updated').innerText = 'Verifying...';
+        await getLastUpdatedTime();
+        alert("Last modified time verified.");
+    }
+</script>
+
+
+<!-- ////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////// Word Count Code //////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////// -->
+
+<p id="totalWordCount"></p>
+<hr>
+
+<script>
+function displayWordCount(sectionId) {
+    const text = document.getElementById(sectionId).textContent;
+    const wordArray = text.trim().split(/\s+/);
+    return wordArray.length;
 }
 
-window.onload = function () {
-    const article = document.getElementById("main-article");
-    const text = article.innerText || article.textContent;
-    document.getElementById("wordCount").innerHTML = countWords(text);
-};
+function displayTotalWordCount() {
+    const introCount = displayWordCount("Introduction_InText");
+    const analysisCount = displayWordCount("Analysis_InText");
+
+    const totalWordCount = introCount + analysisCount;
+
+    document.getElementById("totalWordCount").innerText =
+        `Total word count: ${totalWordCount}`;
+}
 </script>
+
+<!-- Combine BOTH onloads -->
+<script>
+window.onload = function () {
+    getLastUpdatedTime();
+    displayTotalWordCount();
+}
+</script>
+
 
    </body>
 </html>
